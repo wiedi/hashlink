@@ -88,6 +88,9 @@ int read_index(char *fn, int (*handle_entry)(char *key, char*path)) {
 		if(path == NULL)
 			continue;
 
+		if(*path == ' ')
+			path++;
+
 		key  = strdup(key);
 		path = strdup(path);
 		if(key == NULL || path == NULL) {
